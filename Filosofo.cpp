@@ -46,3 +46,17 @@ int Filosofo::devolverGarfos()
 
 //Estados de um filosofo
 
+void Filosofo::comer()
+{
+	Sleep((DWORD)tComendo);
+}
+
+void Filosofo::esperar()
+{
+	Sleep((DWORD)tEsperando);
+}
+
+void Filosofo::pensar()
+{
+	Sleep((DWORD)tPensando);
+}
