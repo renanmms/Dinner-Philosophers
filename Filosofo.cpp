@@ -1,8 +1,9 @@
 #include "Filosofo.h"
 
 //Inicializando o construtor
- Filosofo:: Filosofo() 
+Filosofo:: Filosofo() 
 {
+	 //Filosofos começam pensando
 	this->tComendo = 5000;
 	this->tPensando = 5000;
 	this->tEsperando = 5000;
@@ -12,27 +13,39 @@
 }
 
 //Mostra o status dos filosofos
-void Filosofo::status()
+void Filosofo::status(int i)
 {
 	if (estado == COMENDO)
 	{
-		std::cout << "Filosofo esta comendo..." << std::endl;
+		std::cout << "Filosofo " << i << " esta comendo..." << std::endl;
 	}
 	else if (estado == PENSANDO)
 	{
-		std::cout << "Filosofo esta pensando..." << std::endl;
+		std::cout << "Filosofo" << i << " esta pensando..." << std::endl;
 	}
 	else
 	{
-		std::cout << "Filosofo esta esperando..." << std::endl;
+		std::cout << "Filosofo " << i << " esta esperando..." << std::endl;
 	}
+}
+
+
+void start()
+{
+	
 }
 
 int Filosofo::pegarGarfos() 
 {
-	if (garfoDireita && garfoEsquerda)
+	if (estado == PENSANDO && (garfoDireita && garfoEsquerda))
 	{
 		return COMENDO;
+	}
+	else if(estado == ESPERANDO && !(garfoDireita || garfoEsquerda))
+	{
+
+		return DEADLOCK;
+		
 	}
 	return ESPERANDO;
 	
@@ -48,15 +61,21 @@ int Filosofo::devolverGarfos()
 
 void Filosofo::comer()
 {
-	Sleep((DWORD)tComendo);
+	Sleep(tComendo);
 }
 
 void Filosofo::esperar()
 {
-	Sleep((DWORD)tEsperando);
+	Sleep(tEsperando);
 }
 
 void Filosofo::pensar()
 {
-	Sleep((DWORD)tPensando);
+	Sleep(tPensando);
+}
+
+//Verifica quantidade de garfos na mesa
+int Filosofo::verificaGarfos() 
+{
+	return (int)(garfoDireita + garfoEsquerda);
 }

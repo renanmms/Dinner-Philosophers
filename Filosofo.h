@@ -1,11 +1,13 @@
 #pragma once
 #include <iostream>
 #include <Windows.h>
+#include <thread>
 
 enum semaforo {
 	PENSANDO,
 	COMENDO,
-	ESPERANDO
+	ESPERANDO,
+	DEADLOCK
 };
 
 
@@ -14,6 +16,7 @@ private:
 	int tComendo;
 	int tPensando;
 	int tEsperando;
+	
 
 public:
 
@@ -32,8 +35,9 @@ public:
 	void esperar();
 	int pegarGarfos();
 	int devolverGarfos();
+	int verificaGarfos();
 
-	void status();
+	void status(int i);
 };
 
 

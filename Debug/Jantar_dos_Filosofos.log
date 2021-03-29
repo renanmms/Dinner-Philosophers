@@ -1,2 +1,17 @@
-﻿  Filosofo.cpp
-  Jantar_dos_Filosofos.vcxproj -> C:\Users\Renan\Documents\FEI\7° Semestre\Sistemas Distribuídos\jantar_dos_filosofos\Jantar_dos_Filosofos\Debug\Jantar_dos_Filosofos.exe
+﻿  Mesa.cpp
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\thread(43,14): error C2672: 'invoke': nenhuma função sobrecarregada correspondente encontrada
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\thread(49): message : consulte a referência à instanciação 'unsigned int std::thread::_Invoke<_Tuple,0>(void *) noexcept' do modelo que está sendo compilada
+          with
+          [
+              _Tuple=_Tuple
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\thread(55): message : consulte a referência à instanciação 'unsigned int (__stdcall *std::thread::_Get_invoke<_Tuple,0>(std::integer_sequence<size_t,0>) noexcept)(void *)' do modelo que está sendo compilada
+C:\Users\Renan\Documents\FEI\7° Semestre\Sistemas Distribuídos\jantar_dos_filosofos\Jantar_dos_Filosofos\Jantar_dos_Filosofos\Mesa.cpp(10): message : consulte a referência à instanciação 'std::thread::thread<void(__thiscall Filosofo::* )(int),,0>(_Fn &&)' do modelo que está sendo compilada
+          with
+          [
+              _Fn=void (__thiscall Filosofo::* )(int)
+          ]
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\thread(39,5): error C2893: Falha ao especializar o modelo de função 'unknown-type std::invoke(_Callable &&) noexcept(<expr>)'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\type_traits(1582): message : consulte a declaração de 'std::invoke'
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\thread(39,5): message : Com os seguintes argumentos de template:
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\include\thread(39,5): message : '_Callable=void (__thiscall Filosofo::* )(int)'
